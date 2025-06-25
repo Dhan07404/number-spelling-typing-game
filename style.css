@@ -1,0 +1,36 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  text-align: center;
+  padding: 20px;
+}
+
+.container {
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  max-width: 600px;
+  margin: auto;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+input, select, button {
+  margin: 10px;
+  padding: 10px;
+  font-size: 16px;
+}
+
+#feedback {
+  font-weight: bold;
+  margin: 10px;
+}
+
+.hint-text {
+  font-style: italic;
+  color: #777;
+  margin: 8px 0;
+}
+
+.hint-section {
+  margin-top: 20px;
+}
