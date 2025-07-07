@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Number Spelling Game</title>
+  <link rel="stylesheet" href="static/style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Number Spelling Game</h1>
+    
+    <label for="language-select">Select Language:</label>
+    <select id="language-select">
+      <option value="english">English</option>
+      <option value="arabic">Arabic</option>
+    </select>
+
+    <label class="toggle-label">
+      <input type="checkbox" id="dark-mode-toggle"> Dark Mode
+    </label>
+
+    <div id="spelling-list-container">
+      <h3>Spelling Reference</h3>
+      <ul id="spelling-list"></ul>
+    </div>
+
+    <div id="sentence-container">Press "Start" to begin!</div>
+
+    <input type="text" id="answer-input" placeholder="Type the answer..." disabled />
+    <button id="submit-btn" disabled>Submit</button>
+    <button id="hint-btn" disabled>Hint</button>
+    <span id="hints-left"></span>
+
+    <div id="controls">
+      <button id="start-btn">Start</button>
+      <button id="restart-btn" disabled>Restart</button>
+    </div>
+
+    <div id="spelling-feedback">
+      <h3>All Answers:</h3>
+      <ul id="spelling-result-list"></ul>
+    </div>
+
+    <div id="answer-feedback-lists" class="results">
+      <h3>Correct Answers</h3>
+      <ul id="correct-answers-list"></ul>
+
+      <h3>Incorrect Answers</h3>
+      <ul id="incorrect-answers-list"></ul>
+    </div>
+
+    <div id="final-results"></div>
+  </div>
+
+  <script src="static/script.js"></script>
+</body>
+</html>

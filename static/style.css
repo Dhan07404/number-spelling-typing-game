@@ -1,0 +1,101 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #222;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.container {
+  max-width: 700px;
+  margin: auto;
+  padding: 20px;
+}
+
+input, button, select {
+  padding: 10px;
+  margin: 5px;
+  font-size: 16px;
+}
+
+button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+#spelling-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+  text-align: left;
+}
+
+#spelling-result-list {
+  list-style: none;
+  padding-left: 0;
+  text-align: left;
+}
+
+#answer-feedback-lists {
+  text-align: left;
+  margin-top: 20px;
+}
+
+#correct-answers-list,
+#incorrect-answers-list {
+  list-style: none;
+  padding-left: 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  max-height: 160px;
+  overflow-y: auto;
+  margin-bottom: 15px;
+  background-color: #fff;
+  color: #222;
+}
+
+#correct-answers-list li {
+  padding: 6px 10px;
+  border-bottom: 1px solid #ddd;
+  color: green;
+}
+
+#incorrect-answers-list li {
+  padding: 6px 10px;
+  border-bottom: 1px solid #ddd;
+  color: red;
+}
+
+.toggle-label {
+  display: inline-block;
+  margin-left: 10px;
+}
+
+/* Dark mode styles */
+body.dark-mode {
+  background-color: #111;
+  color: #eee;
+}
+
+.dark-mode input,
+.dark-mode select,
+.dark-mode button {
+  background-color: #333;
+  color: white;
+}
+
+.dark-mode #spelling-list,
+.dark-mode #correct-answers-list,
+.dark-mode #incorrect-answers-list {
+  background-color: #222;
+  color: #eee;
+  border-color: #555;
+}
