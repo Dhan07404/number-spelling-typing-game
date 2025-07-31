@@ -1,0 +1,178 @@
+/* Mobile-first base */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f4f4;
+  color: #222;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  line-height: 1.4;
+}
+
+.container {
+  max-width: 700px;
+  margin: auto;
+  padding: 20px 15px;
+}
+
+h1 {
+  font-size: 1.8em;
+}
+
+input, button, select {
+  width: 100%;
+  max-width: 350px;
+  padding: 12px;
+  margin: 8px auto;
+  font-size: 1.1em;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+button:hover:not(:disabled) {
+  background-color: #0056b3;
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+select:disabled {
+  background-color: #eee;
+  color: #888;
+}
+
+.toggle-label {
+  display: inline-block;
+  margin-left: 10px;
+  font-size: 1.1em;
+}
+
+/* Reference list styling */
+#spelling-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 15px;
+  text-align: left;
+}
+
+#spelling-list li {
+  padding: 6px 8px;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Feedback sections */
+#spelling-result-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 20px 0;
+  text-align: left;
+}
+
+#answer-feedback-lists {
+  text-align: left;
+  margin-top: 20px;
+}
+
+/* Correct / incorrect answer lists */
+#correct-answers-list,
+#incorrect-answers-list {
+  list-style: none;
+  padding-left: 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  max-height: 200px;
+  overflow-y: auto;
+  margin-bottom: 20px;
+  background-color: #fff;
+  color: #222;
+}
+
+#correct-answers-list li {
+  padding: 8px 12px;
+  border-bottom: 1px solid #ddd;
+  color: green;
+  animation: fadeSlideIn 0.4s ease-in;
+}
+
+#incorrect-answers-list li {
+  padding: 8px 12px;
+  border-bottom: 1px solid #ddd;
+  color: red;
+  animation: fadeShake 0.5s ease-in;
+}
+
+/* Animations */
+@keyframes fadeSlideIn {
+  from { opacity: 0; transform: translateX(-15px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeShake {
+  from { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+  to { transform: translateX(0); }
+}
+
+/* Locked option overlay */
+select option[data-premium] {
+  color: #aaa;
+}
+select option[data-premium]::before {
+  content: "🔒 ";
+}
+
+/* Dark mode styles */
+body.dark-mode {
+  background-color: #111;
+  color: #eee;
+}
+
+.dark-mode input,
+.dark-mode select,
+.dark-mode button {
+  background-color: #333;
+  color: white;
+}
+
+.dark-mode #spelling-list,
+.dark-mode #correct-answers-list,
+.dark-mode #incorrect-answers-list {
+  background-color: #222;
+  color: #eee;
+  border-color: #555;
+}
+
+.dark-mode select option[data-premium] {
+  color: #777;
+}
+
+/* Responsive adjustments */
+@media (min-width: 480px) {
+  button, input, select {
+    max-width: 280px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding: 30px;
+  }
+  h1 {
+    font-size: 2.2em;
+  }
+  input, button, select {
+    max-width: 320px;
+    font-size: 1.2em;
+  }
+}
