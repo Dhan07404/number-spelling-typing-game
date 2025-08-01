@@ -1,0 +1,279 @@
+/* Mobile-first base */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f4f4;
+  color: #222;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  line-height: 1.4;
+}
+
+.container {
+  max-width: 700px;
+  margin: auto;
+  padding: 20px 15px;
+}
+
+h1 {
+  font-size: 1.8em;
+}
+
+input, button, select {
+  width: 100%;
+  max-width: 350px;
+  padding: 12px;
+  margin: 8px auto;
+  font-size: 1.1em;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+button:hover:not(:disabled) {
+  background-color: #0056b3;
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+select:disabled {
+  background-color: #eee;
+  color: #888;
+}
+
+.toggle-label {
+  display: inline-block;
+  margin-left: 10px;
+  font-size: 1.1em;
+}
+
+/* New timer display style */
+#timer-display {
+  font-weight: bold;
+  font-size: 1.2em;
+  margin: 10px 0;
+}
+
+/* Feedback sections */
+#spelling-result-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 20px 0;
+  text-align: left;
+}
+
+#answer-feedback-lists {
+  text-align: left;
+  margin-top: 20px;
+}
+
+/* Correct / incorrect answer lists */
+#correct-answers-list,
+#incorrect-answers-list {
+  list-style: none;
+  padding-left: 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  max-height: 200px;
+  overflow-y: auto;
+  margin-bottom: 20px;
+  background-color: #fff;
+  color: #222;
+}
+
+#correct-answers-list li {
+  padding: 8px 12px;
+  border-bottom: 1px solid #ddd;
+  color: green;
+  animation: fadeSlideIn 0.4s ease-in;
+}
+
+#incorrect-answers-list li {
+  padding: 8px 12px;
+  border-bottom: 1px solid #ddd;
+  color: red;
+  animation: fadeShake 0.5s ease-in;
+}
+
+/* Animations */
+@keyframes fadeSlideIn {
+  from { opacity: 0; transform: translateX(-15px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeShake {
+  from { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+  to { transform: translateX(0); }
+}
+
+/* Locked option overlay */
+select option[data-premium] {
+  color: #aaa;
+}
+select option[data-premium]::before {
+  content: "🔒 ";
+}
+
+/* Modal styles */
+.modal {
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal.hidden {
+  display: none;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 30px;
+  border-radius: 8px;
+  text-align: center;
+  max-width: 400px;
+  margin: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content button {
+  width: auto;
+  margin: 5px;
+}
+
+/* Spelling list specific styles */
+#spelling-list-container-modal {
+  max-height: 300px;
+  overflow-y: auto;
+  text-align: left;
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+#spelling-list-modal {
+  list-style: none;
+  padding: 0;
+  margin-top: 15px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 10px;
+}
+
+#spelling-list-modal li {
+  padding: 6px 8px;
+  border-bottom: 1px solid #ddd;
+}
+
+.close-btn {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Confetti canvas */
+#confetti-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 999;
+  display: none;
+}
+
+/* Dark mode styles */
+body.dark-mode {
+  background-color: #111;
+  color: #eee;
+}
+
+.dark-mode input,
+.dark-mode select,
+.dark-mode button {
+  background-color: #333;
+  color: white;
+}
+
+.dark-mode #spelling-list-container,
+.dark-mode #correct-answers-list,
+.dark-mode #incorrect-answers-list,
+.dark-mode .modal-content {
+  background-color: #222;
+  color: #eee;
+  border-color: #555;
+}
+
+.dark-mode select option[data-premium] {
+  color: #777;
+}
+
+/* Pro hidden elements */
+.pro-hidden {
+  display: block;
+}
+
+/* Responsive adjustments */
+@media (min-width: 480px) {
+  button, input, select {
+    max-width: 280px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding: 30px;
+  }
+  h1 {
+    font-size: 2.2em;
+  }
+  input, button, select {
+    max-width: 320px;
+    font-size: 1.2em;
+  }
+}
+
+.top-controls {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+@media (min-width: 600px) {
+  .top-controls {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .top-controls button {
+    max-width: fit-content;
+  }
+}
